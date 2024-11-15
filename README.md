@@ -1,38 +1,59 @@
 # Overview
 
-{Important! Do not say in this section that this is college assignment. Talk about what you are trying to accomplish as a software engineer to further your learning.}
+I developed a Python-based software application that integrates seamlessly with an SQLite relational database. The goal of this project was to understand and implement fundamental concepts of database management, data querying, and relationships between tables.
 
-{Provide a description of the software that you wrote and how it integrates with a SQL Relational Database. Describe how to use your program.}
+This program allows users to manage and query a database of students and their associated courses. It showcases the creation of relational tables, the insertion of data, and the execution of SQL queries to retrieve meaningful insights.
 
-{Describe your purpose for writing this software.}
+To use the software:
 
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running, a walkthrough of the code, and a view of how created the Relational Database.}
+1. Run the setup script to create the database and its tables.
+2. Use the data insertion script to populate the database with initial data.
+3. Execute query scripts to view the relationships between students and their courses in a neat tabular format.
 
 [Software Demo Video](http://youtube.link.goes.here)
 
 # Relational Database
 
-{Describe the relational database you are using.}
+This project uses an SQLite relational database.
 
-{Describe the structure (tables) of the relational database that you created.}
+## Database Structure:
+
+1. **`students` Table**:
+
+   - `id`: INTEGER (Primary Key, Auto-Increment)
+   - `name`: TEXT
+   - `age`: INTEGER
+   - `grade`: TEXT
+   - `email`: TEXT
+
+2. **`courses` Table**:
+   - `id`: INTEGER (Primary Key, Auto-Increment)
+   - `course_name`: TEXT
+   - `student_id`: INTEGER (Foreign Key referencing `students.id`)
+
+These tables are connected with a one-to-many relationship, where one student can be associated with multiple courses.
 
 # Development Environment
 
-{Describe the tools that you used to develop the software}
+The software was developed using:
 
-{Describe the programming language that you used and any libraries.}
+- **Programming Language**: Python
+- **Libraries**:
+  - `sqlite3` for database interaction.
+  - `tabulate` for formatting output in a tabular format.
+- **Tools**:
+  - Visual Studio Code for coding.
+  - SQLite Browser for inspecting and validating the database structure.
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
-
-- [Web Site Name](http://url.link.goes.here)
-- [Web Site Name](http://url.link.goes.here)
+- [Python SQLite Documentation](https://docs.python.org/3/library/sqlite3.html)
+- [Tabulate Documentation](https://pypi.org/project/tabulate/)
+- [DB Browser for SQLite](https://sqlitebrowser.org/)
 
 # Future Work
 
-{Make a list of things that you need to fix, improve, and add in the future.}
+In future iterations, I plan to:
 
-- Item 1
-- Item 2
-- Item 3
+- Add a user interface.
+- Implement additional tables for the ability to add more information (eg teachers, or grade point average)
